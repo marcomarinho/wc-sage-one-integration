@@ -105,7 +105,7 @@ function tl_wc_sage_order_actions( $order_id ) {
 		if ($sage->isRefreshTokenExpiringSoon()) {
 			echo '<a class="button" href="' . $sage->authorizationEndpoint() .'">Refresh Authorisation for Sage</a>';
         } else {
-			if ($order->meta_exists(self::ORDER_FIELD_CUSTOMER_ID)) {
+			if ($order->meta_exists($this->ORDER_FIELD_CUSTOMER_ID)) {
 				echo '       <input type="submit"';
 				echo '           class="button button-primary tl_wc_sage_order tl_wc_sage_customer_exists "';
 				echo '           name="' . ThinkingLogicWCSage::CREATE_INVOICE_BUTTON_ID . '"';
